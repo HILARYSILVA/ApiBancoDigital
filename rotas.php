@@ -20,4 +20,8 @@ switch ($url)
 
     case'/correntista/entrar';
     break;
+
+    default:
+           http_response_code(403);
+        break;
 }
