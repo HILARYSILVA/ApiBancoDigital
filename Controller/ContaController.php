@@ -2,13 +2,13 @@
 
     namespace App\Controller;
 
-    use App\DAO\/*ExemploDAO*/;
-    use App\Model\{/*ExemploModel*/, /*ExemploModel*/, /*ExemploModel*/};
+    use App\DAO\
+    use App\Model\
     use Exception;
 
     include 'Controller.php';
 
-    class /*ExemploController*/ extends Controller
+    class  extends Controller
     {
     }
 ?>
