@@ -1,8 +1,8 @@
 <?php
 
-    namespace App\Controller;
+    namespace ApiBancoDigital\Controller;
 
-    use App\DAO\/*ExemploDAO*/;
+    use ApiBancoDigital\DAO\/*ExemploDAO*/;
     use App\Model\{/*ExemploModel*/, /*ExemploModel*/, /*ExemploModel*/};
     use Exception;
 

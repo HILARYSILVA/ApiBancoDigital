@@ -1,9 +1,9 @@
 <?php
 
-    namespace App\Controller;
+    namespace ApiBancoDigital\Controller;
 
-    use App\DAO\
-    use App\Model\
+    use ApiBancoDigital\DAO\
+    use ApiBancoDigital\Model\
     use Exception;
 
     include 'Controller.php';
