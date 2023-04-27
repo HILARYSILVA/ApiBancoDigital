@@ -1,14 +1,26 @@
 <?php
 
-    namespace App\Controller;
+namespace ApiBancoDigital\Controller;
 
-    use App\DAO\/*ExemploDAO*/;
-    use App\Model\{/*ExemploModel*/, /*ExemploModel*/, /*ExemploModel*/};
-    use Exception;
-
-    include 'Controller.php';
-
-    class /*ExemploController*/ extends Controller
+class TransacaoController extends Controller
+{
+    public static function save()
     {
+
     }
-?>
+
+    public static function select()
+    {
+
+    }
+
+    public static function update()
+    {
+
+    }
+
+    public static function delete()
+    {
+        
+    }
+}

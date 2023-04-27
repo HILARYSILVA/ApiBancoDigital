@@ -1,15 +1,26 @@
 <?php
 
-    namespace ApiBancoDigital\Controller;
+namespace ApiBancoDigital\Controller;
 
-    use ApiBancoDigital\DAO\
-    use ApiBancoDigital\Model\
-    use Exception;
-
-    include 'Controller.php';
-
-    class  extends Controller
+class ChavePixController extends Controller
+{
+    public static function save()
     {
+
     }
-?>
-Footer
+
+    public static function select()
+    {
+
+    }
+
+    public static function update()
+    {
+
+    }
+
+    public static function delete()
+    {
+        
+    }
+}

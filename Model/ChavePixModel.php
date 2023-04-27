@@ -1,30 +1,41 @@
 <?php
 
-namespace App\Model;
+namespace ApiBancoDigital\Model;
 
-use App\DAO\ChavePixDAO;
-use Exception;
+use ApiBancoDigital\DAO\ChavePixDAO;
 
 class ChavePixModel extends Model
 {
-    public $id, $tipo, $chave, $id_conta;
+    public $id, $chave, $tipo, $id_conta;
 
     public function save()
     {
+        $dao = new ChavePixDAO();
+
         if($this->id == null)
-            (new ChavePixDAO())->insert($this);
+            $dao->insert($this);
         else
-            (new ChavePixDAO())->update($this);
+            $dao->update($this);
     }
 
     public function getAllRows()
     {
-        $this->rows = (new ChavePixDAO())->select();
+        $dao = new ChavePixDAO();
+
+        $this->rows = $dao->select();
     }
 
-    public function delete()
+    public function getById(int $id)
     {
-        (new ChavePixDAO())->delete($this->id);
+        $dao = new ChavePixDAO();
+
+        $this->rows = $dao->selectById($id);
+    }
+
+    public function delete(int $id)
+    {
+        $dao = new ChavePixDAO();
+
+        $dao->delete($id);
     }
 }
-
