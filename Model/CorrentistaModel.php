@@ -3,6 +3,7 @@
 namespace ApiBancoDigital\Model;
 
 use ApiBancoDigital\DAO\CorrentistaDAO;
+
 use Exception;
 
 class CorrentistaModel extends Model
@@ -11,16 +12,14 @@ class CorrentistaModel extends Model
 
     public function save()
     {
-        if($this->id == null)
-            (new CorrentistaDAO())->insert($this);
-        else
-            (new CorrentistaDAO())->update($this);        
+        return (new CorrentistaDAO())->save($this); 
     }
 
-    public function getAllRows()
-    {
-        $this->rows = (new CorrentistaDAO())->select();
+    public function getByCpfAndSenha($cpf, $senha) : CorrentistaModel
+    {      
+        return (new CorrentistaDAO())->selectByCpfAndSenha($cpf, $senha);
     }
+
 
     public function delete()
     {

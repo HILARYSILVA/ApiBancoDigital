@@ -11,9 +11,6 @@ class ChavePixDAO extends DAO
         parent::__construct();       
     }
 
-    /**
-     * 
-     */
     public function select()
     {
         $sql = "SELECT * FROM chave_pix";

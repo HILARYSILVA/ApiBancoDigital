@@ -6,4 +6,5 @@ use ApiBancoDigital\Model\TransacaoModel;
 
 class TransacaoDAO extends DAO
 {
+    
 }

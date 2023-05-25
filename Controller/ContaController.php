@@ -2,6 +2,8 @@
 
 namespace ApiBancoDigital\Controller;
 
+use App\Controller\Controller;
+
 class ChavePixController extends Controller
 {
     public static function save()
