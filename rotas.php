@@ -1,21 +1,42 @@
 <?php
 
-use ApiBancoDigital\Controller\CorrentistaController;
-
-$url = parse_url($_SERVER['REQUEST_UR1'], PHP_URL_PATH);
-
-switch ($url)
+use ApiBancoDigital\Controller\
 {
-    case'/correntista/entrar':
-        CorrentistaController::entrar();
+    CorrentistaController,
+    ContaController,
+    TransacaoController,
+};
+
+
+
+$url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+
+switch ($url) 
+{
+    case '/exportar':
+        $return_var = NULL;
+        $output = NULL;
+        $command = 'C:/"Program Files"/MySQL/"MySQL Server 8.0"/bin/mysqldump -uroot -petecjau -P3307 -hlocalhost db_bancodigital > C:/Dev/file.sql';
+        exec($command, $output, $exit_code);
+
+        var_dump($exit_code);
+
+  
+
+        echo "deu certo.";
     break;
 
-    case'/correntista/save':
-        CorrentistaController::save();
+
+
+
+    case '/correntista/salvar':
+        CorrentistaController::salvar();
     break;
 
-    case'/conta/extrato':
-        ContaController::extrato();
+   
+    case '/correntista/entrar':
+        CorrentistaController::login();
     break;
 
     case '/conta/abrir':
@@ -26,21 +47,21 @@ switch ($url)
         ContaController::fechar();
     break;
 
-    case'/conta/pix/enviar';
+    case '/conta/extrato':
+        ContaController::extrato();
     break;
 
-    case'/conta/pix/receber';
-    break;
-
-    case '/transacao/pix/enviar':
-        TransacaoController::enviarPix();
-    break;
 
     case '/transacao/pix/receber':
         TransacaoController::receberPix();
     break;
 
+ 
+    case '/transacao/pix/enviar':
+        TransacaoController::enviarPix();
+    break;
+
     default:
-           http_response_code(403);
-        break;
+        header('HTTP/1.0 403 Forbidden');
+    break;
 }
