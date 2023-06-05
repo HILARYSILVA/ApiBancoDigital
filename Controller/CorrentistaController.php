@@ -3,12 +3,11 @@
 namespace ApiBancoDigital\Controller;
 
 use ApiBancoDigital\Model\CorrentistaModel;
-use App\Controller\Controller;
 use Exception;
 
 class CorrentistaController extends Controller
 {
-    public static function entrar()
+    public static function login()
     {
         try
         {
@@ -27,7 +26,10 @@ class CorrentistaController extends Controller
         }  
     }
 
-    public static function save() : void
+    /**
+     * Preenche um Model para que seja enviado ao banco de dados para salvar.
+     */
+    public static function salvar()
     {
         try
         {
@@ -50,16 +52,5 @@ class CorrentistaController extends Controller
             parent::LogError($e);
             parent::getExceptionAsJSON($e);
         }   
-    }
-
-
-    public static function listar() : void
-    {
-       
-    }
-
-    public static function delete() : void
-    {
-        
     }
 }

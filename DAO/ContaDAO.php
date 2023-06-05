@@ -24,6 +24,8 @@ class ContaDAO extends DAO
                 VALUES 
                             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
         
+        $stmt = $this->conexao->prepare($sql);
+        
         $stmt->bindValue(1, $model->id_categoria);
         $stmt->bindValue(2, $model->id_cidadao);
         $stmt->bindValue(3, $model->id_bairro);
@@ -33,7 +35,6 @@ class ContaDAO extends DAO
         $stmt->bindValue(7, $model->latitude);
         $stmt->bindValue(8, $model->longitude);
         $stmt->bindValue(9, $model->foto);
-
          
         return $stmt->execute();
     }
