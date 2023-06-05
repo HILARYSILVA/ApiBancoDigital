@@ -3,6 +3,7 @@
 namespace ApiBancoDigital\Controller;
 
 use ApiBancoDigital\Controller\Controller;
+use App\Controller\Controller as ControllerController;
 
 class TransacaoController extends Controller
 {

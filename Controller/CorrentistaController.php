@@ -3,6 +3,7 @@
 namespace ApiBancoDigital\Controller;
 
 use ApiBancoDigital\Model\CorrentistaModel;
+use App\Controller\Controller;
 use Exception;
 
 class CorrentistaController extends Controller
@@ -22,7 +23,7 @@ class CorrentistaController extends Controller
         } catch(Exception $e) {
             
             parent::LogError($e);
-            parent::getExceptionAsJSON($e);
+            parent::GetExcepitionAsJSON($e);
         }  
     }
 
@@ -50,7 +51,7 @@ class CorrentistaController extends Controller
         } catch(Exception $e) {
             
             parent::LogError($e);
-            parent::getExceptionAsJSON($e);
+            parent::GetExcepitionAsJSON($e);
         }   
     }
 }
