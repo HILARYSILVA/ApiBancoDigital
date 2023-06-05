@@ -3,10 +3,11 @@
 namespace ApiBancoDigital\DAO;
 
 use ApiBancoDigital\Model\ContaModel;
+use \PDO;
+
 
 class ContaDAO extends DAO
 {
-  
     
     public function __construct()
     {
@@ -15,16 +16,20 @@ class ContaDAO extends DAO
     }
 
 
-   
+ 
     public function insert(ContaModel $model)
     {
-        
+
         $sql = "INSERT INTO Reclamacao 
                             (id_categoria, id_cidadao, id_bairro, descricao, titulo, endereco, latitude, longitude, foto) 
                 VALUES 
-                            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "
-        
+                            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+
+
+       
         $stmt = $this->conexao->prepare($sql);
+
+
         
         $stmt->bindValue(1, $model->id_categoria);
         $stmt->bindValue(2, $model->id_cidadao);
@@ -35,12 +40,15 @@ class ContaDAO extends DAO
         $stmt->bindValue(7, $model->latitude);
         $stmt->bindValue(8, $model->longitude);
         $stmt->bindValue(9, $model->foto);
+
          
         return $stmt->execute();
     }
 
 
    
+
+    
     public function select(int $id_cidadao)
     {
         $sql = "SELECT * FROM Reclamacao WHERE id_cidadao = ? ";
@@ -49,10 +57,10 @@ class ContaDAO extends DAO
         $stmt->bindValue(1, $id_cidadao);
         $stmt->execute();
 
-        
+   
         return $stmt->fetchAll(PDO::FETCH_CLASS);        
     }
 
 
-    
+   
 }
