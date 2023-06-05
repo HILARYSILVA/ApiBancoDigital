@@ -29,7 +29,7 @@ class ChavePixModel extends Model
     {
         $dao = new ChavePixDAO();
 
-        $this->rows = $dao->selectById($id);
+        $this->rows = $dao->selectbyid($id);
     }
 
     public function delete(int $id)
