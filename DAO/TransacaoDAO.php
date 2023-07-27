@@ -22,7 +22,7 @@ class TransacaoDAO extends DAO
         $sql = "INSERT INTO Reclamacao 
                             (id_categoria, id_cidadao, id_bairro, descricao, titulo, endereco, latitude, longitude, foto) 
                 VALUES 
-                            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+                            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) "  ;
 
 
 
