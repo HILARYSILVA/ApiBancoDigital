@@ -1,9 +1,9 @@
 <?php
 
-namespace ApiBancoDigital\Controller;
+namespace ApiBanco_Digital\Controller\Controller;
 
-use ApiBancoDigital\Model\CorrentistaModel;
-use App\Controller\Controller;
+use ApiBanco_Digital\Model\CorrentistaModel;
+use ApiBancoDigital\Model\CorrentistaModel as ModelCorrentistaModel;
 use Exception;
 
 class CorrentistaController extends Controller
@@ -12,7 +12,7 @@ class CorrentistaController extends Controller
     {
         try
         {
-            
+
             $data = json_decode(file_get_contents('php://input'));
 
             $model = new CorrentistaModel();
@@ -22,20 +22,18 @@ class CorrentistaController extends Controller
         } catch(Exception $e) {
             
             parent::LogError($e);
-            parent::GetExcepitionAsJSON($e);
+            parent::getExceptionAsJSON($e);
         }  
     }
 
-    
     public static function salvar()
     {
         try
         {
             $data = json_decode(file_get_contents('php://input'));
 
-            $model = new CorrentistaModel();
+            $model = new ModelCorrentistaModel();
 
-            
             foreach (get_object_vars($data) as $key => $value) 
             {
                 $prop_letra_minuscula = strtolower($key);
