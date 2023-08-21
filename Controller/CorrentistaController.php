@@ -15,14 +15,14 @@ class CorrentistaController extends Controller
 
             $data = json_decode(file_get_contents('php://input'));
 
-            $model = new CorrentistaModel();
+            $model = new ModelCorrentistaModel();
 
             parent::getResponseAsJSON($model->getByCpfAndSenha($data->Cpf, $data->Senha)); 
 
         } catch(Exception $e) {
             
             parent::LogError($e);
-            parent::getExceptionAsJSON($e);
+            parent::GetExcepitionAsJSON($e);
         }  
     }
 
