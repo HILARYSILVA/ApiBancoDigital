@@ -1,22 +1,23 @@
 <?php
 
-namespace ApiBanco_Digital\Controller\Controller;
+namespace ApiBancoDigital\Controller;
 
-use ApiBanco_Digital\Model\CorrentistaModel;
-use ApiBancoDigital\Model\CorrentistaModel as ModelCorrentistaModel;
+use ApiBancoDigital\Model\CorrentistaModel;
 use Exception;
-
 class CorrentistaController extends Controller
 {
+    
     public static function login()
     {
         try
         {
-
+            
             $data = json_decode(file_get_contents('php://input'));
 
-            $model = new ModelCorrentistaModel();
+          
+            $model = new CorrentistaModel();
 
+            
             parent::getResponseAsJSON($model->getByCpfAndSenha($data->Cpf, $data->Senha)); 
 
         } catch(Exception $e) {
@@ -26,14 +27,18 @@ class CorrentistaController extends Controller
         }  
     }
 
+    
     public static function salvar()
     {
         try
         {
+         
             $data = json_decode(file_get_contents('php://input'));
 
-            $model = new ModelCorrentistaModel();
+            $model = new CorrentistaModel();
 
+
+          
             foreach (get_object_vars($data) as $key => $value) 
             {
                 $prop_letra_minuscula = strtolower($key);
@@ -41,6 +46,7 @@ class CorrentistaController extends Controller
                 $model->$prop_letra_minuscula = $value;
             }
 
+          
             parent::getResponseAsJSON($model->save()); 
 
         } catch(Exception $e) {

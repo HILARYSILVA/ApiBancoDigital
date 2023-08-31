@@ -2,21 +2,10 @@
 
 namespace ApiBancoDigital\Controller;
 
-/**
- * Definimos aqui que nossa classe precisa incluir uma classe de outro subnamespace
- * do projeto, no caso a classe PessoaModel do subnamespace Model
- */
-use ApiBancoDigital\Model\ContaModel;
-use App\Controller\Controller;
 
-/**
- * Classes Controller são responsáveis por processar as requisições do usuário.
- * Isso significa que toda vez que um usuário chama uma rota, um método (função)
- * de uma classe Controller é chamado.
- * O método poderá devolver uma View (fazendo um include), acessar uma Model (para
- * buscar algo no banco de dados), redirecionar o usuário de rota, ou mesmo,
- * chamar outra Controller.
- */
+use ApiBancoDigital\Model\ContaModel;
+
+
 class ContaController extends Controller
 {
     public static function abrir()

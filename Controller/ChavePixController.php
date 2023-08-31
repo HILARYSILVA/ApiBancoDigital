@@ -1,11 +1,10 @@
 <?php
 
-namespace ApiBanco_Digital\Controller\Controller;
+namespace ApiBancoDigital\Controller;
 
-use ApiBanco_Digital\Controller\Controller\Controller as ControllerController;
-use App\Controller\Controller;
+use ApiBancoDigital\Controller as ControllerController;
 
-class ChavePixController extends ControllerController
+class ChavePixController extends Controller
 {
     public static function save()
     {

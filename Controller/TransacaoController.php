@@ -3,10 +3,9 @@
 namespace ApiBancoDigital\Controller;
 
 use ApiBancoDigital\Model\TransacaoModel;
-use App\Controller\Controller;
+use ApiBancoDigital\Controller\Controller;
+use ApiBancoDigital\Controller\Controller\Controller as ControllerController;
 
-
- 
 class TransacaoController extends Controller
 {
     public static function receberPix()

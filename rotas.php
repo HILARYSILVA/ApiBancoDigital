@@ -1,6 +1,6 @@
 <?php
 
-use ApiBancoDigital\Controller\
+use ApiBancoDigital\Controller
 {
     CorrentistaController,
     ContaController,
